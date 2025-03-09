@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: servicio-eureka-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+     # Configuración de la instancia Eureka
+    leaseRenewalIntervalInSeconds: 30 # Intervalo de renovación del lease en segundos
+    leaseExpirationDurationInSeconds: 90 # Duración de expiración del lease en segundos
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    # Configuración del servidor Eureka
+    evictionIntervalTimerInMs: 60000 # Intervalo para la expiración de instancias no renovadas
+    responseCacheUpdateIntervalMs: 30000 # Intervalo de actualización de la cache de respuestas
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  file: 
+    path: /tmp/ # Ruta donde se almacenarán los logs
+    name: /tmp/svc-eureka.log # Nombre del archivo de logs
+  level:
+    root: INFO # Nivel de log global
+    com.netflix.eureka: INFO # Nivel de log para Eureka
+    org.springframework.cloud.netflix.eureka.server: INFO # Nivel de log para el servidor Eureka
+  

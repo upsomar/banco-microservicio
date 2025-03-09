@@ -1,0 +1,56 @@
+server:
+  port: 8090
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: servicio-gateway
+  cloud:
+    gateway:     
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*" #['http://localhost:4200', 'http://localhost:otro']
+            allowedHeaders:
+              - content-type
+              - x-requested-with
+              - Authorization
+            allowedMethods:
+              - GET
+              - POST
+              - OPTIONS
+              - DELETE
+              - PUT     
+      routes:
+      - id: servicio-cuenta
+        uri: lb://servicio-cuenta    
+        predicates:
+        - Path=/api/cuenta/**
+        filters:
+        - StripPrefix=2
+                            
+      - id: servicio-persona
+        uri: lb://servicio-persona
+        predicates:
+          - Path=/api/persona/**
+        filters:        
+          - StripPrefix=2          
+      
+logging:
+  level:
+    root: DEBUG
+    org:
+      springframework:
+      web: DEBUG
+  file:
+    path: /tmp/
+    name: /tmp/svc-gateway.log
+       
+    
