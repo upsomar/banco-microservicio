@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "3cfbd3a0-33d7-4f0a-990c-5aee43fe878c",
+		"name": "banco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6159741"
+	},
+	"item": [
+		{
+			"name": "nueva_persona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \n    \"personaNombre\": \"Juan Pérez\",\n    \"personaGenero\": \"M\",\n    \"personaEdad\": 30,\n    \"personaIdentificacion\": \"1234567890\",\n    \"personaDireccion\": \"Calle Falsa 123\",\n    \"personaTelefono\": \"555-1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/persona/guardar_persona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"persona",
+						"guardar_persona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar_persona",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"personaCodigo\": 1,\n    \"personaNombre\": \"Juan Pérez\",\n    \"personaGenero\": \"M\",\n    \"personaEdad\": 30,\n    \"personaIdentificacion\": \"1234567890\",\n    \"personaDireccion\": \"Calle cruz del sur\",\n    \"personaTelefono\": \"555-1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/persona/actualizar_persona/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"persona",
+						"actualizar_persona",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarPersona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/persona/listar_persona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"persona",
+						"listar_persona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "/*{\n    \"personaNombre\": \"Jose Lema\",\n    \"personaGenero\": \"M\", \n    \"personaEdad\": 35,\n    \"personaIdentificacion\": \"1234567891\",\n    \"personaDireccion\": \"Otavalo sn y principal\",\n    \"personaTelefono\": \"098254785\",\n    \n    \"clienteClave\": \"1234\",\n    \"clienteEstado\": true\n}*/\n/*\n{\n    \n    \"personaNombre\": \"Marianela Montalvo\",\n    \"personaGenero\": \"F\",  \n    \"personaEdad\": 28,\n    \"personaIdentificacion\": \"0987654321\",\n    \"personaDireccion\": \"Amazonas y NNUU\",\n    \"personaTelefono\": \"097548965\",\n    \n    \"clienteClave\": \"5678\",\n    \"clienteEstado\": true\n}\n\n*/\n\n\n{\n    \n    \"personaNombre\": \"Juan Osorio\",\n    \"personaGenero\": \"M\",  \n    \"personaEdad\": 40,\n    \"personaIdentificacion\": \"1122334455\",\n    \"personaDireccion\": \"13 junio y Equinoccial\",\n    \"personaTelefono\": \"098874587\",\n    \n    \"clienteClave\": \"1245\",\n    \"clienteEstado\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/persona/guardar_usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"persona",
+						"guardar_usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListaCliente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/persona/listar_cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"persona",
+						"listar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Cuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "/*{\n    \"cuentaNumero\": \"478758\",\n    \"cuentaTipo\": \"A\",\n    \"cuentaSaldoInicial\": 2000.00,\n    \"cuentaEstado\": true,\n    \"clienteCodigo\": 1\n}*/\n/*\n{\n    \"cuentaNumero\": \"225487\",\n    \"cuentaTipo\": \"C\",\n    \"cuentaSaldoInicial\": 100.00,\n    \"cuentaEstado\": true,\n    \"clienteCodigo\": 2\n}*/\n/*\n{\n    \"cuentaNumero\": \"495878\",\n    \"cuentaTipo\": \"A\",\n    \"cuentaSaldoInicial\": 0.00,\n    \"cuentaEstado\": true,\n    \"clienteCodigo\": 3\n}*/\n/*\n{\n    \"cuentaNumero\": \"496825\",\n    \"cuentaTipo\": \"A\",\n    \"cuentaSaldoInicial\": 540.00,\n    \"cuentaEstado\": true,\n    \"clienteCodigo\": 2\n}*/\n\n\n{\n    \"cuentaNumero\": \"585545\",\n    \"cuentaTipo\": \"C\",\n    \"cuentaSaldoInicial\": 100.00,\n    \"cuentaEstado\": true,\n    \"clienteCodigo\": 1\n}\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/cuenta/guardar_cuenta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"cuenta",
+						"guardar_cuenta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movimiento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "/*{\n    \"cuentaNumero\": \"478758\",\n    \"movimientoTipo\": \"R\",\n    \"movimientoValor\": 575.00\n}*/\n/*\n{\n    \"cuentaNumero\": \"225487\",\n    \"movimientoTipo\": \"D\",\n    \"movimientoValor\": 600.00\n}*/\n/*\n{\n    \"cuentaNumero\": \"495878\",\n    \"movimientoTipo\": \"D\",\n    \"movimientoValor\": 150.00\n}*/\n\n\n{\n    \"cuentaNumero\": \"496825\",\n    \"movimientoTipo\": \"R\",\n    \"movimientoValor\": 540.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/cuenta/guardar_cuenta_movimiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"cuenta",
+						"guardar_cuenta_movimiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REPORTE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/cuenta/reporte?fechaInicio=2025-03-01&fechaFin=2025-03-15&personaIdentificacion=0987654321",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"cuenta",
+						"reporte"
+					],
+					"query": [
+						{
+							"key": "fechaInicio",
+							"value": "2025-03-01"
+						},
+						{
+							"key": "fechaFin",
+							"value": "2025-03-15"
+						},
+						{
+							"key": "personaIdentificacion",
+							"value": "0987654321"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
